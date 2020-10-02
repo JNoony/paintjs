@@ -1,9 +1,9 @@
 const canvas = document.getElementById('jsCanvas');
 
 /* -----------------------------
-   canvas 설정
+   [ canvas 설정 ]
  - 캔버스 사이즈를 css가 아닌 js로 한번더 정해줘야한다 = 실제 픽셀사이즈
------------------------------ */
+* ----------------------------- */
 const ctx = canvas.getContext('2d');
 const colors = document.querySelectorAll('.jsColor');
 const range = document.querySelector('#jsRange');
@@ -120,14 +120,16 @@ function handleReset(){
 }
 
 
-// 이벤트 발생
+/* -----------------------------
+    이벤트 발생
+* ----------------------------- */
 if(canvas){
     canvas.addEventListener('mousemove', onMouseMove) //마우스 움직임
     canvas.addEventListener('mousedown', startPainting) //마우스 클릭 됐을때
     canvas.addEventListener('mouseup', stopPainting) //마우스 클릭 뗐을때
     canvas.addEventListener('mouseleave', stopPainting ) //마우스가 캔버스를 떠났을때
 
-    canvas.addEventListener('click', handleCanvasClick ) 
+    canvas.addEventListener('click', handleCanvasClick ) //모드를 변경후 캔버스 클릭 했을때
     canvas.addEventListener('contextmenu', handleCM ) //마우스가 오른쪽 버튼 눌렀을때
 }
 
@@ -144,7 +146,6 @@ if(range){
 }
 
 if(mode){
-    //input tag 이벤트 변화 감지
     mode.addEventListener('click',handleModeClick )
 }
 
